@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Donation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+       
+    
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        .donation-section {
+            margin-bottom: 30px;
+        }
+        .donate-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .donate-btn:hover {
+            background-color: #0a66d6;
+        }
+        .qr-code-section {
+            display: none;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .qr-code-section img {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
+        .download-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block; /* Keep button inside the container */
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        footer .social-icons a:hover {
+            color: #007BFF;
+        }
+        footer p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            .donate-btn {
+                width: 80%;
+                font-size: 16px;
+                padding: 12px;
+            }
+            .qr-code-section img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <img src="Jisnu.webp" alt="Profile Image" class="circle-image">
+        <div> <h1>Support Our Jisnu Sports</h1></div>
+       
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="list.html">Donation List</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="donation-section" id="donation-buttons">
+            <h2>Select Donation Amount</h2>
+            <button class="donate-btn" onclick="showQRCode(50)">₹50</button>
+            <button class="donate-btn" onclick="showQRCode(100)">₹100</button>
+            <button class="donate-btn" onclick="showQRCode(150)">₹150</button>
+            <button class="donate-btn" onclick="showQRCode(200)">₹200</button>
+        </section>
+
+        <!-- QR Code Section with Payment Button and Download Option -->
+        <section class="qr-code-section" id="qr-section">
+            <h2>Scan QR Code to Donate</h2>
+            <img src="" alt="QR Code for Donation" class="qr-code" id="qr-code">
+            <a id="download-link" class="download-btn" download="donation_qrcode.jpeg">Download QR Code</a>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h3>Contact Help Desk</h3>
+            <p>+7033192746</p>
+            <p>📧 Email: jisnusports@gmail.com</p>
+        </div>
+        <div>
+            <h3>Online Services</h3>
+            <ul>
+                <li><a href="how_to_donate.html">How To Donate</a></li>
+                <li><a href="event_registration.html">Sports Event Registration</a></li>
+                <li><a href="live_streaming.html">Live Streaming & Highlights</a></li>
+                <li><a href="sports_news.html">Sports News & Updates</a></li>
+                <li><a href="sponsorship.html">Sponsorship & Partnership Programs</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Privacy & Policy</h3>
+            <ul>
+                <li><a href="#">Privacy & Policy</a></li>
+                <li><a href="#">Refund and Cancellation</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+            <div id = "contact" class="social-icons">
+                <a href="https://www.facebook.com/p/Jisnu-Sport-61572467410287/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/jisnusportsofficial/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@JisnuSports"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        <p>Copyrights 2024 © Jisnu Sports. All rights reserved</p>
+    </footer>
+
+    <script>
+        function showQRCode(amount) {
+            // Show the QR code section
+            document.getElementById('qr-section').style.display = 'block';
+            
+            let qrCodeMap = {
+                50: 'qr_code/50.jpeg',
+                100: 'qr_code/100.jpeg',
+                150: 'qr_code/150.jpeg',
+                200: 'qr_code/200.jpeg'
+            };
+
+            // Set the QR code image based on the selected amount
+            document.getElementById('qr-code').src = qrCodeMap[amount];
+
+            // Set the download link for the QR code image
+            const downloadLink = document.getElementById('download-link');
+            downloadLink.href = qrCodeMap[amount];
+            downloadLink.download = `donation_qrcode_${amount}.jpeg`;
+
+            alert('Scan the QR code to donate ₹' + amount);
+        }
+
+        function paymentSuccess() {
+            alert("Payment Successfully Made!");
+            // You can add more functionality for the payment confirmation here.
+        }
+    </script>
+</body>
+</html>

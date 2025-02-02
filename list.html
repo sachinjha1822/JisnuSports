@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JisnuSports - Donation Tracking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .back-button {
+            background-color: #f4f4f4;
+            color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        .circle-image {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block; /* Centers the image horizontally */
+            border-radius: 50%;
+            width: 20vw; /* Makes the image width relative to the viewport width */
+            height: 20vw; /* Keeps the image square */
+            max-width: 100px; /* Prevents the image from becoming too large on wide screens */
+            max-height: 100px; /* Prevents the image from becoming too large on wide screens */
+        }
+        
+        @media (max-width: 600px) {
+            .circle-image {
+                width: 30vw; /* Adjusts the image size on small screens */
+                height: 30vw; /* Keeps the image square on small screens */
+            }
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            table {
+                font-size: 14px;
+            }
+            .back-button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+            input, button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+        @media screen and (max-width: 400px) {
+            table {
+                font-size: 12px;
+            }
+            .back-button {
+                font-size: 12px;
+                padding: 7px 12px;
+            }
+            input, button {
+                font-size: 12px;
+                padding: 7px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">Back</a>
+        <img src="Jisnu.webp" alt="Profile Image" class="circle-image">
+        <h2 align="center">JisnuSports - Donation Tracking</h2>
+
+        <!-- Current Month Donation Details (February 2025) -->
+        <h3 align="center">Current Month Donation January 2025</h3>
+        <table>
+            <tr>
+                <th>Donor Name</th>
+                <th>Amount (₹)</th>
+                <th>Contact Information</th>
+                <th>Payment Method</th>
+            </tr>
+            <tr><td>Unknown</td><td>500</td><td></td><td>UPI</td></tr>
+            <tr><td>Ayush</td><td>50</td><td>9122912632</td><td>UPI</td></tr>
+            <tr><td>Sachin</td><td>50</td><td>7033192746</td><td>UPI</td></tr>
+        </table>
+
+        <h3 align="center">Previous Month Donations</h3>
+        <!-- Search Option for Previous Month Donations -->
+        <label for="search">Search Previous Month Donations:</label>
+        <input type="text" id="search" onkeyup="searchDonor()" placeholder="Search for names..">
+
+        <table id="previousMonthDonations">
+            <tr>
+                <th align="center">Donor Name</th>
+                <th align="center">Amount (₹)</th>
+                <th align="center">Contact Information</th>
+                <th align="center">Payment Method</th>
+            </tr>
+            <!-- Previous month data will be inserted here via JavaScript -->
+        </table>
+    </div>
+
+    <script>
+        // Sample XML data (replace with real XML data as required)
+        const xmlData = `
+            <donations>
+                <month name="January 2025">
+                    <donor>
+                        <name>Vikram</name>
+                        <amount>50</amount>
+                        <contact>9065321485</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Puchu</name>
+                        <amount>50</amount>
+                        <contact>9065934621</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Sudhir</name>
+                        <amount>50</amount>
+                        <contact>9572325304</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Abhishek</name>
+                        <amount>150</amount>
+                        <contact>9102187147</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Bibhu</name>
+                        <amount>100</amount>
+                        <contact>7370007330</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Krishna</name>
+                        <amount>80</amount>
+                        <contact>9508405649</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Gopal</name>
+                        <amount>90</amount>
+                        <contact>9693756343</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Sarthak</name>
+                        <amount>60</amount>
+                        <contact>7061371120</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Ayush</name>
+                        <amount>100</amount>
+                        <contact>9122912632</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                    <donor>
+                        <name>Sachin</name>
+                        <amount>50</amount>
+                        <contact>7033192746</contact>
+                        <payment_method>UPI</payment_method>
+                    </donor>
+                </month>
+            </donations>
+        `;
+
+        // Function to display previous month data
+        function displayPreviousMonthDonations(xmlString) {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+            const month = xmlDoc.getElementsByTagName("month")[0];
+            const donors = month.getElementsByTagName("donor");
+
+            let output = "";
+            for (let i = 0; i < donors.length; i++) {
+                const donor = donors[i];
+                const name = donor.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                const amount = donor.getElementsByTagName("amount")[0].childNodes[0].nodeValue;
+                const contact = donor.getElementsByTagName("contact")[0].childNodes[0].nodeValue;
+                const paymentMethod = donor.getElementsByTagName("payment_method")[0].childNodes[0].nodeValue;
+
+                output += `
+                    <tr class="donor-row">
+                        <td class="donor-name">${name}</td>
+                        <td>${amount}</td>
+                        <td>${contact}</td>
+                        <td>${paymentMethod}</td>
+                    </tr>
+                `;
+            }
+
+            document.getElementById("previousMonthDonations").innerHTML += output;
+        }
+
+        // Function to search previous month donations by donor name
+        function searchDonor() {
+            const searchValue = document.getElementById("search").value.toLowerCase();
+            const donorNames = document.querySelectorAll('.donor-name');
+            donorNames.forEach(nameCell => {
+                const row = nameCell.closest('tr');
+                if (nameCell.textContent.toLowerCase().includes(searchValue)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+
+        // Initialize the previous month data on page load
+        displayPreviousMonthDonations(xmlData);
+    </script>
+</body>
+</html>

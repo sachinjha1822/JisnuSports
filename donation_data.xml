@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<donations>
+    <month name="December 2024">
+        <donor>
+            <name>Vikram</name>
+            <amount>50</amount>
+            <contact>9065321485</contact>
+            <payment_method>UPI</payment_method>
+        </donor>
+        <donor>
+            <name>Puchu</name>
+            <amount>50</amount>
+            <contact>9065934621</contact>
+            <payment_method>UPI</payment_method>
+        </donor>
+        <donor>
+            <name>Sudhir</name>
+            <amount>50</amount>
+            <contact>9572325304</contact>
+            <payment_method>UPI</payment_method>
+        </donor>
+        <!-- More donor records can be added here -->
+    </month>
+    <month name="January 2025">
+        <donor>
+            <name>Unknown</name>
+            <amount>500</amount>
+            <contact></contact>
+            <payment_method>UPI</payment_method>
+        </donor>
+        <donor>
+            <name>Ayush</name>
+            <amount>50</amount>
+            <contact>9122912632</contact>
+            <payment_method>UPI</payment_method>
+        </donor>
+        <donor>
+            <name>Sachin</name>
+            <amount>50</amount>
+            <contact>7033192746</contact>
+            <payment_method>UPI</payment_method>
+        </donor>
+        <!-- More donor records can be added here -->
+    </month>
+</donations>
