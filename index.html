@@ -1,89 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jisnu Sports</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
-    <style></style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jisnu Sports</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="index.css" />
+
+  <style>
+    /* Ensure full width layout */
+    body, html {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    .circle-image {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Slider Section */
+    .slider {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 100vw;
+      object-fit: cover;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* Video Section */
+    .video-container {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .video-container video {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+    }
+
+    /* Content Wrapper */
+    .content-wrapper {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 20px;
+    }
+
+  </style>
 </head>
+
 <body>
-    <header>
-        <img src="Jisnu.webp" alt="Profile Image" class="circle-image">
-        <h1>Support Our Jisnu Sports</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="donation.html">Donate</a></li>
-                <li><a href="list.html">Donation List</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <img src="Jisnu.webp" alt="Profile Image" class="circle-image" />
+    <h1>Support Our Jisnu Sports</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="donation.html">Donate</a></li>
+        <li><a href="list.html">Donation List</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="content-wrapper">
-        <section id="about">
-            <h2 align="center">About JisnuSports | Sports for a Cause 🏆 </h2>
-            <p align="center">JisnuSports is a platform dedicated to empowering athletes, supporting sports organizations, and promoting the spirit of sportsmanship. Our mission is to bring communities together through sports while driving positive change through donations, partnerships, and impactful initiatives.</p>
-        </section>
-        <section id="about">
-            <h2 align="center">Our Vision</h2>
-            <p align="center">To create a world where every athlete, regardless of background, has the resources and opportunities to succeed in their sports journey.</p>
-        </section>
-        <section id="about">
-            <h2 align="center">What We Do</h2>
-            <p align="center">✅ Athlete Development – Providing training, mentorship, and scholarships to emerging sports talents.
-                ✅ Sports Donations – Connecting donors with athletes and sports organizations in need of financial or equipment support.
-                ✅ Event Sponsorships – Partnering with brands and sports organizations to organize events, tournaments, and competitions.
-                ✅ Community Engagement – Promoting sports awareness, fitness, and teamwork through local and global initiatives.</p>
-        </section>
-        <section id="about">
-            <h2 align="center">Join Us & Make an Impact!</h2>
-            <p align="center">💙 Support our mission by:
-
-                Donating to sports programs
-                Sponsoring athletes and events
-                Engaging with our community through social media and live events</p>
-        </section>
+  <!-- Slider Section -->
+  <section class="slider">
+    <div class="slides">
+      <img src="assets/slider1.jpeg" alt="Slide 1" />
+      <img src="assets/slider1.jpeg" alt="Slide 2" />
+      <img src="assets/slider1.jpeg" alt="Slide 3" />
     </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </section>
 
-    <footer>
-        <div>
-            <h3>Contact Help Desk</h3>
-            <p>+7033192746</p>
-                <p>📧 Email: jisnusports@gmail.com</p>
-        </div>
-        <div>
-            <h3>Online Services</h3>
-            <ul>
-                <li><a href="how_to_donate.html">How To Donate</a></li>
-                <li><a href="event_registration.html">Sports Event Registration</a></li>
-                <li><a href="live_streaming.html">Live Streaming & Highlights</a></li>
-                <li><a href="sports_news.html">Sports News & Updates</a></li>
-                <li><a href="sponsorship.html">Sponsorship & Partnership Programs</a></li>
-            </ul>
-        </div>
-    
-        <div>
-            <h3>Privacy & Policy</h3>
-            <ul>
-                <li><a href="#">Privacy & Policy</a></li>
-                <li><a href="#">Refund and Cancellation</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-        
-        <div id = "contact" class="social-icons">
-            <a href="https://www.facebook.com/p/Jisnu-Sport-61572467410287/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/jisnusportsofficial/"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@JisnuSports"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-        <div style="width: 100%; text-align: center;">
-            <p>Copyrights 2024 © Jisnu Sports. All rights reserved</p>
-        </div>
-    </footer>
+  <!-- Video Section -->
+  <section class="video-container">
+    <h2>Watch Our Story</h2>
+    <video autoplay loop muted playsinline>
+      <source src="assets/Story.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <div class="content-wrapper">
+    <!-- About Sections -->
+    <section id="about">
+      <h2 align="center">About JisnuSports | Sports for a Cause 🏆</h2>
+      <p align="center">
+        JisnuSports is a platform dedicated to empowering athletes, supporting sports organizations, and promoting the spirit of sportsmanship.
+      </p>
+    </section>
+
+    <section id="about">
+      <h2 align="center">Our Vision</h2>
+      <p align="center">
+        To create a world where every athlete, regardless of background, has the resources and opportunities to succeed in their sports journey.
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <div>
+      <h3>Contact Help Desk</h3>
+      <p>+7033192746</p>
+      <p>📧 Email: jisnusports@gmail.com</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/p/Jisnu-Sport-61572467410287/"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/jisnusportsofficial/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@JisnuSports"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>Copyrights 2024 © Jisnu Sports. All rights reserved</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let slideIndex = 0;
+      const slides = document.querySelector('.slides');
+      const totalSlides = slides.children.length;
+
+      function moveSlide(n) {
+        slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${slideIndex * 100}vw)`;
+      }
+
+      setInterval(() => moveSlide(1), 4000);
+    });
+  </script>
+
 </body>
 </html>
