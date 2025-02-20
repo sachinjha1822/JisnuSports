@@ -74,47 +74,60 @@
       max-width: 100px;
       max-height: 100px;
     }
-    @media (max-width: 600px) {
-      .circle-image {
-        width: 30vw;
-        height: 30vw;
-      }
-    }
     @media screen and (max-width: 600px) {
       .container {
-        padding: 10px;
-      }
-      table {
-        font-size: 14px;
-      }
-      .back-button {
-        font-size: 14px;
-        padding: 8px 15px;
-      }
-      input, button {
-        font-size: 14px;
-        padding: 8px;
-      }
-    }
-    @media screen and (max-width: 400px) {
-      table {
-        font-size: 12px;
-      }
-      .back-button {
-        font-size: 12px;
-        padding: 7px 12px;
-      }
-      input, button {
-        font-size: 12px;
-        padding: 7px;
-      }
-    }
+    padding: 10px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .back-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 8px;
+  }
+  @media screen and (max-width: 400px) {
+      .container {
+    padding: 10px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .back-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 8px;
+  }
   </style>
 </head>
 <body>
   <div class="container">
     <a href="index.html" class="back-button">Back</a>
-    <img src="Jisnu.webp" alt="Profile Image" class="circle-image" />
+    <img src="logo.png" alt="Profile Image" class="circle-image" />
     <h2 align="center">JisnuSports - Donation Tracking</h2>
 
     <!-- Current Month Donation Details (February 2025) -->
