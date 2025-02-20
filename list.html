@@ -162,167 +162,113 @@
 
   <script>
     // Sample XML data (replace with real XML data as required)
-    const xmlData = `
-      <donations>
-        <month name="January 2025">
-          <donor>
-            <name>Unkown</name>
-            <amount>500</amount>
-            <contact></contact>
-            <payment_method>UPI</payment_method>
-            <address>Not Provided</address>
-            <donation_date>2025-01-15</donation_date>
-          </donor>
-          <donor>
-            <name>Ayush</name>
-            <amount>50</amount>
-            <contact>9122912632</contact>
-            <payment_method>UPI</payment_method>
-            <address>Chanpura</address>
-            <donation_date>2025-01-10</donation_date>
-          </donor>
-          <donor>
-            <name>Sachin</name>
-            <amount>50</amount>
-            <contact>7033192746</contact>
-            <payment_method>UPI</payment_method>
-            <address>Not Provided</address>
-            <donation_date>2025-01-12</donation_date>
-          </donor>
-        </month>
-        <month name="Dec 2024">
-          <donor>
-                    <name>Vikram</name>
-                    <amount>50</amount>
-                    <contact>9065321485</contact>
-                    <payment_method>UPI</payment_method>
-                    <address>Not Provided</address>
-                    <donation_date>2024-12-10</donation_date>
-                </donor>
-                <donor>
-                    <name>Puchu</name>
-                    <amount>50</amount>
-                    <contact>9065934621</contact>
-                    <payment_method>UPI</payment_method>
-                    <address>Not Provided</address>
-                    <donation_date>2024-12-12</donation_date>
-                </donor>
-                <donor>
-                    <name>Sudhir</name>
-                    <amount>50</amount>
-                    <contact>9572325304</contact>
-                    <payment_method>UPI</payment_method>
-                    <address>Not Provided</address>
-                    <donation_date>2024-12-14</donation_date>
-                </donor>
-                <donor>
-                    <name>Abhishek</name>
-                    <amount>150</amount>
-                    <contact>9102187147</contact>
-                    <payment_method>UPI</payment_method>
-                    <address>Not Provided</address>
-                    <donation_date>2024-12-18</donation_date>
-                </donor>
-                <donor>
-                    <name>Bibhu</name>
-                    <amount>100</amount>
-                    <contact>7370007330</contact>
-                    <payment_method>UPI</payment_method>
-                    <address>Not Provided</address>
-                    <donation_date>2024-12-20</donation_date>
-                </donor>
-                    <donor>
-                        <name>Krishna</name>
-                        <amount>80</amount>
-                        <contact>9508405649</contact>
-                        <payment_method>UPI</payment_method>
-                        <address>Not Provided</address>
-                    <donation_date>2024-12-20</donation_date>
-                    </donor>
-                    <donor>
-                        <name>Gopal</name>
-                        <amount>90</amount>
-                        <contact>9693756343</contact>
-                        <payment_method>UPI</payment_method>
-                        <address>Not Provided</address>
-                    <donation_date>2024-12-20</donation_date>
-                    </donor>
-                    <donor>
-                        <name>Sarthak</name>
-                        <amount>60</amount>
-                        <contact>7061371120</contact>
-                        <payment_method>UPI</payment_method>
-                        <address>Not Provided</address>
-                    <donation_date>2024-12-20</donation_date>
-                    </donor>
-                    <donor>
-                        <name>Ayush Kumar Chaudhary</name>
-                        <amount>100</amount>
-                        <contact>9122912632</contact>
-                        <payment_method>UPI</payment_method>
-                        <address>Chanpura</address>
-                    <donation_date>2025-01-31</donation_date>
-                    </donor>
-                    <donor>
-                        <name>Sachin kumar Jha</name>
-                        <amount>50</amount>
-                        <contact>7033192746</contact>
-                        <payment_method>UPI</payment_method>
-                        <address>Shivnagar</address>
-                    <donation_date>204-12-02</donation_date>
-                    </donor>
-        </month>
-      </donations>
-    `;
+const xmlData = `
+  <donations>
+    <month name="January 2025">
+      <donor>
+        <name>Unknown</name>
+        <amount>500</amount>
+        <contact></contact>
+        <payment_method>UPI</payment_method>
+        <address>Not Provided</address>
+        <donation_date>2025-01-15</donation_date>
+      </donor>
+      <donor>
+        <name>Ayush</name>
+        <amount>50</amount>
+        <contact>9122912632</contact>
+        <payment_method>UPI</payment_method>
+        <address>Chanpura</address>
+        <donation_date>2025-01-10</donation_date>
+      </donor>
+      <donor>
+        <name>Sachin</name>
+        <amount>50</amount>
+        <contact>7033192746</contact>
+        <payment_method>UPI</payment_method>
+        <address>Not Provided</address>
+        <donation_date>2025-01-12</donation_date>
+      </donor>
+    </month>
+    <month name="December 2024">
+      <donor>
+        <name>Vikram</name>
+        <amount>50</amount>
+        <contact>9065321485</contact>
+        <payment_method>UPI</payment_method>
+        <address>Not Provided</address>
+        <donation_date>2024-12-10</donation_date>
+      </donor>
+      <donor>
+        <name>Puchu</name>
+        <amount>50</amount>
+        <contact>9065934621</contact>
+        <payment_method>UPI</payment_method>
+        <address>Not Provided</address>
+        <donation_date>2024-12-12</donation_date>
+      </donor>
+    </month>
+  </donations>
+`;
 
-    // Function to display previous month donation data
-    function displayPreviousMonthDonations(xmlString) {
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(xmlString, "text/xml");
-      const months = xmlDoc.getElementsByTagName("month");
+// Function to display previous month donations
+function displayPreviousMonthDonations(xmlString) {
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+  const months = xmlDoc.getElementsByTagName("month");
 
-      let output = "";
-      for (let i = 0; i < months.length; i++) {
-        const monthName = months[i].getAttribute("name");
-        // Insert a header row for each month
-        output += `<tr><th colspan="4" style="text-align:center; background-color:#007BFF; color:white;">${monthName}</th></tr>`;
+  let output = "";
+  for (let i = 0; i < months.length; i++) {
+    const monthName = months[i].getAttribute("name");
+    output += `<tr><th colspan="6" style="text-align:center; background-color:#007BFF; color:white;">${monthName}</th></tr>`;
 
-        const donors = months[i].getElementsByTagName("donor");
-        for (let j = 0; j < donors.length; j++) {
-          const donor = donors[j];
-          const name = donor.getElementsByTagName("name")[0].textContent;
-          const amount = donor.getElementsByTagName("amount")[0].textContent;
-          // Provide a default value if contact is empty
-          const contactNode = donor.getElementsByTagName("contact")[0];
-          const contact = (contactNode && contactNode.textContent.trim() !== "") ? contactNode.textContent : "N/A";
-          const paymentMethod = donor.getElementsByTagName("payment_method")[0].textContent;
+    const donors = months[i].getElementsByTagName("donor");
+    for (let j = 0; j < donors.length; j++) {
+      const donor = donors[j];
+      const name = donor.getElementsByTagName("name")[0].textContent;
+      const amount = donor.getElementsByTagName("amount")[0].textContent;
+      const contactNode = donor.getElementsByTagName("contact")[0];
+      const contact = contactNode && contactNode.textContent.trim() !== "" ? contactNode.textContent : "N/A";
+      const paymentMethod = donor.getElementsByTagName("payment_method")[0].textContent;
+      const address = donor.getElementsByTagName("address")[0].textContent;
+      const donationDate = donor.getElementsByTagName("donation_date")[0].textContent;
 
-          output += `
-            <tr class="donor-row">
-              <td class="donor-name">${name}</td>
-              <td>${amount}</td>
-              <td>${contact}</td>
-              <td>${paymentMethod}</td>
-            </tr>
-          `;
-        }
-      }
-      document.getElementById("previousMonthDonations").innerHTML += output;
+      output += `
+        <tr class="donor-row">
+          <td class="donor-name">${name}</td>
+          <td>${amount}</td>
+          <td>${contact}</td>
+          <td>${paymentMethod}</td>
+          <td>${address}</td>
+          <td>${donationDate}</td>
+        </tr>
+      `;
     }
+  }
 
-    // Function to search previous month donations by donor name
-    function searchDonor() {
-      const searchValue = document.getElementById("search").value.toLowerCase();
-      // Select only rows with donor data (ignores month header rows)
-      const donorRows = document.querySelectorAll('.donor-row');
-      donorRows.forEach(row => {
-        const donorName = row.querySelector('.donor-name').textContent.toLowerCase();
-        row.style.display = donorName.includes(searchValue) ? "" : "none";
-      });
+  document.getElementById("previousMonthDonations").innerHTML += output;
+}
+
+// Function to search donors in previous month donations
+function searchDonor() {
+  const input = document.getElementById("search").value.toLowerCase();
+  const rows = document.querySelectorAll("#previousMonthDonations .donor-row");
+
+  rows.forEach(row => {
+    const name = row.querySelector(".donor-name").textContent.toLowerCase();
+    if (name.includes(input)) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
     }
+  });
+}
 
-    // Initialize the previous month data on page load
-    displayPreviousMonthDonations(xmlData);
+// Load the previous month donations when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+  displayPreviousMonthDonations(xmlData);
+});
+
   </script>
 </body>
 </html>
