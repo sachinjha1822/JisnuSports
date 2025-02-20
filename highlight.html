@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlights - Jisnu Sports</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body, html {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+          }
+      
+          
+      
+          .circle-image {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-left: 10px;
+          }
+      
+          nav ul {
+            list-style: none;
+            padding: 0;
+          }
+      
+          nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+          }
+      
+          nav ul li a {
+            text-decoration: none;
+            color: #fdfdfd;
+            font-weight: bold;
+          }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img, .card video {
+            width: 100%;
+            border-bottom: 2px solid #ddd;
+        }
+        .card-title {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal video {
+            width: 100%;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        footer .social-icons a:hover {
+            color: #144171;
+        }
+        footer p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Profile Image" class="circle-image">
+        <div> <h1>Jisnu Sports Highlights</h1></div>
+       
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="list.html">Donation List</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card" onclick="openModal('Story', 'video')">
+            <video id="Story" src="assets/Story.mp4" muted></video>
+            <div class="card-title">YCC Chanpura</div>
+        </div>
+        <div class="card" onclick="openModal('Story2', 'video')">
+            <video id="Story2" src="assets/Story2.mp4" muted></video>
+            <div class="card-title">Match Highlights 2</div>
+        </div>
+        <div class="card" onclick="openModal('assets/highlights/h1.jpeg', 'image')">
+            <img src="assets/highlights/h1.jpeg" alt="Highlight Image">
+        </div>
+        <div class="card" onclick="openModal('assets/highlights/h2.jpeg', 'image')">
+            <img src="assets/highlights/h2.jpeg" alt="Highlight Image">
+        </div>
+        <div class="card" onclick="openModal('assets/highlights/h3.jpeg', 'image')">
+            <img src="assets/highlights/h3.jpeg" alt="Highlight Image">
+        </div>
+        <div class="card" onclick="openModal('assets/highlights/h4.jpeg', 'image')">
+            <img src="assets/highlights/h4.jpeg" alt="Highlight Image">
+        </div>
+        <div class="card" onclick="openModal('assets/highlights/h5.jpeg', 'image')">
+            <img src="assets/highlights/h5.jpeg" alt="Highlight Image">
+        </div>
+        <div class="card" onclick="openModal('assets/highlights/h6.jpeg', 'image')">
+            <img src="assets/highlights/h6.jpeg" alt="Highlight Image">
+        </div>
+        <div class="card" onclick="openModal('assets/highlights/h7.jpeg', 'image')">
+            <img src="assets/highlights/h7.jpeg" alt="Highlight Image">
+        </div>
+        <div class="card" onclick="openModal('assets/highlights/h8.jpeg', 'image')">
+            <img src="assets/highlights/h8.jpeg" alt="Highlight Image">
+        </div>
+    </div>
+    <!-- Modal for Videos -->
+    <div id="mediaModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <video id="modalVideo" class="modal-content" controls></video>
+        <img id="modalImage" class="modal-content" style="display:none;">
+    </div>
+    <footer>
+        <div>
+          <h3>Contact Help Desk</h3>
+          <p>+7033192746</p>
+          <p>📧 Email: jisnusports@gmail.com</p>
+        </div>
+        <div>
+          <h3>Online Services</h3>
+          <ul>
+            <li><a href="how_to_donate.html">How To Donate</a></li>
+            <li><a href="event_registration.html">Sports Event Registration</a></li>
+            <li><a href="highlight.html">Live Streaming & Highlights</a></li>
+            <li><a href="sports_news.html">Sports News & Updates</a></li>
+            <li><a href="sponsorship.html">Sponsorship & Partnership Programs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Privacy & Policy</h3>
+          <ul>
+            <li><a href="#">Privacy & Policy</a></li>
+            <li><a href="#">Refund and Cancellation</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div id="contact" class="social-icons">
+          <a href="https://www.facebook.com/p/Jisnu-Sport-61572467410287/"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/jisnusportsofficial/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@JisnuSports"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div style="width: 100%; text-align: center;">
+          <p>Copyrights 2025 © Jisnu Sports. All rights reserved</p>
+        </div>
+      </footer>
+    
+      <script>
+        function openModal(mediaSrc, type) {
+            const videoModal = document.getElementById('modalVideo');
+            const imageModal = document.getElementById('modalImage');
+            
+            if (type === 'video') {
+                videoModal.src = `assets/${mediaSrc}.mp4`;
+                videoModal.style.display = 'block';
+                imageModal.style.display = 'none';
+            } else {
+                imageModal.src = mediaSrc;
+                imageModal.style.display = 'block';
+                videoModal.style.display = 'none';
+            }
+            document.getElementById('mediaModal').style.display = 'flex';
+        }
+        
+        function closeModal() {
+            document.getElementById('mediaModal').style.display = 'none';
+            document.getElementById('modalVideo').pause();
+        }
+    </script>
+</body>
+</html>
