@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JisnuSports - Donation Tracking</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,8 +12,16 @@
       padding: 20px;
       background-color: #f4f4f4;
     }
+    .circle-image {
+      margin-top: 20px;
+      position: relative;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+  }
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
       background: white;
       padding: 20px;
@@ -97,8 +106,8 @@
   input, button {
     font-size: 14px;
     padding: 8px;
-    width: 95%;
   }
+}
   @media screen and (max-width: 400px) {
       .container {
     padding: 10px;
@@ -124,7 +133,9 @@
     padding: 8px;
     width: 95%;
   }
-  </style>
+}
+
+</style>
 </head>
 <body>
   <div class="container">
@@ -144,25 +155,17 @@
         <th>Address</th>
         <th>Date</th>
       </tr>
-      <tr><td>Balmukund</td><td>50</td><td>7635030162</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
-       <tr><td>Monu</td><td>50</td><td>7250814683</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
-       <tr><td>Saurabh</td><td>50</td><td>9608814088</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
-       <tr><td>Ajay</td><td>50</td><td>8102395350</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
-      <tr><td>Ricky</td><td>50</td><td>8271872623</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
-       <tr><td>Hira</td><td>50</td><td>6299805680</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
-       <tr><td>Sachin</td><td>50</td><td>7061423688</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
-       <tr><td>Shubham</td><td>50</td><td>9354716138</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
-      <tr><td>Abhishek</td><td>100</td><td>9102187147</td><td>UPI</td><td></td><td>2025-01-19</td></tr>
       <tr><td>Vishal</td><td>50</td><td>9608887282</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Pawan</td><td>50</td><td>9718304840</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Puchu</td><td>50</td><td>9065934621</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Sagar</td><td>50</td><td>7292838377</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Sudhir</td><td>50</td><td>9572325304</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Krishi</td><td>50</td><td>7050989610</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
-      <tr><td>Ajit</td><td>150</td><td>9262220378</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Shibgtullah</td><td>50</td><td>6202796426</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Satyam</td><td>50</td><td>6204998130</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
-       <tr><td>Anil</td><td>50</td><td>7157043238</td><td>UPI</td><td>Not Provided</td><td>2025-01-15</td></tr>
+      <tr><td>Anil</td><td>50</td><td>7157043238</td><td>UPI</td><td>Not Provided</td><td>2025-01-15</td></tr>
+       <tr><td>Abhishek</td><td>100</td><td></td><td>UPI</td><td>9102187147</td><td>2025-01-19</td></tr>
+      <tr><td>Ajit</td><td>150</td><td>9262220378</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Chandan</td><td>150</td><td>7352231491</td><td>UPI</td><td>Not Provided</td><td>2025-01-15</td></tr>
     </table>
     </div>
@@ -206,7 +209,7 @@ const xmlData = `
         <donation_date>2025-01-10</donation_date>
       </donor>
       <donor>
-        <name>Sachin Kumar Jha</name>
+        <name>Sachin</name>
         <amount>50</amount>
         <contact>7033192746</contact>
         <payment_method>UPI</payment_method>
@@ -358,5 +361,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
   </script>
+  
 </body>
 </html>
