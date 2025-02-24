@@ -1,5 +1,5 @@
-<script>
-  document.addEventListener("copy", (event) => {
+document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("copy", (event) => {
       const selectData = window.getSelection().toString();
       event.clipboardData.setData(
         "text/plain",
@@ -13,3 +13,5 @@
     alert("Inspect Elements Not Allowed");
     event.preventDefault();
   })
+
+});<script>
