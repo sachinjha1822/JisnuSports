@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.addEventListener("copy", (event) => {
+ document.addEventListener("copy", (event) => {
       const selectData = window.getSelection().toString();
       event.clipboardData.setData(
         "text/plain",
@@ -14,4 +13,4 @@ document.addEventListener("DOMContentLoaded", function() {
     event.preventDefault();
   })
 
-});<script>
+});
