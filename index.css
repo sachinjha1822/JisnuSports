@@ -3,24 +3,22 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
+    background: #e3e3e3;
     color: #333;
 }
 
 header, footer {
-    background: #007BFF;
-	background: -webkit-linear-gradient(to right, #007BFF, #007BFF);
-	background: linear-gradient(to right, #007BFF, #007BFF);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
+    background: linear-gradient(145deg, #0066cc, #004d99);
     color: #fff;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
 header h1, footer p {
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -36,6 +34,8 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .container {
@@ -46,28 +46,18 @@ nav ul li a {
     margin: 20px auto;
 }
 
-.donation-form {
+.donation-form, .qr-code-section {
     flex: 0 1 calc(50% - 20px);
-    background: #fff;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-left: -50px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.qr-code-section {
-    flex: 0 1 calc(30% - 20px);
-    background: #fff;
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background: linear-gradient(145deg, #ffffff, #d9d9d9);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
 }
 
 h2 {
     color: #007bff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .qr-code {
@@ -75,8 +65,8 @@ h2 {
     height: 400px;
     margin: 20px auto;
     display: block;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.8);
 }
 
 .form-group {
@@ -97,24 +87,16 @@ h2 {
 .form-group input, .form-group select, .form-group textarea {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
+    border: none;
+    border-radius: 10px;
     width: 100%;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     outline: none;
-    border-color: #007bff;
-}
-
-.form-group .terms {
-    display: flex;
-    align-items: center;
-}
-
-.form-group .terms input {
-    margin-right: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.9);
 }
 
 .buttons {
@@ -131,19 +113,16 @@ h2 {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
 }
 
-.buttons .reset-btn {
-    background: #007BFF;
-    color: #fff;
+.buttons button:hover {
+    background: linear-gradient(145deg, #0056b3, #007bff);
 }
-
-.buttons .reset-btn:hover {
-    background: #007BFF;
-}
-
 
 footer {
     display: flex;
@@ -152,83 +131,37 @@ footer {
     align-items: center;
 }
 
-footer div {
-    margin: 10px;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer ul li {
-    margin-bottom: 5px;
-}
-
-footer ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-footer .social-icons a {
-    margin: 0 5px;
-    color: #fff;
-    text-decoration: none;
-}
-
-footer .social-icons a i {
-    font-size: 1.5em;
-}
-
-footer p {
-    margin: 20px 0 0 0;
-    text-align: center;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .donation-form, .qr-code-section {
-        flex: 1 0 auto;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .qr-code-section {
-        order: -1;
-    }
-}
 .circle-image {
     margin-top: 20px;
-    margin-left: 50px;
     position: relative;
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.8);
 }
-/* Style for the logout button */
+
 .logout-button {
     position: absolute;
     top: 20px;
     right: 20px;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background: linear-gradient(145deg, #007bff, #0056b3);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
 }
 
 .logout-button:hover {
-    background-color: #007BFF;
+    background: linear-gradient(145deg, #0056b3, #007bff);
+}
+ul {
+    list-style: none; /* Removes default bullets */
+    padding: 0; /* Removes left padding */
+    margin: 0; /* Adjusts spacing */
 }
 
-/* Ensuring the header is positioned relative for absolute positioning of the logout button */
-header {
-    position: relative;
+ul li {
+    margin-bottom: 8px; /* Adds space between links */
 }
-
