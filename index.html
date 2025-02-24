@@ -8,146 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="index.css" />
 
-  <style>
-    /* Ensure full width layout */
-    body, html {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-    }
-
-    
-
-    .circle-image {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      margin-left: 10px;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline-block;
-      margin: 0 10px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #fdfdfd;
-      font-weight: bold;
-    }
-
-    /* Slider Section */
-    .slider {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .slides {
-      display: flex;
-      width: 300%;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slides img {
-      width: 100vw;
-      object-fit: cover;
-    }
-
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .prev { left: 10px; }
-    .next { right: 10px; }
-
-    .video-slider-container {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-  
-    .video-slider {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 200%; /* Twice the width for two videos */
-    }
-  
-    .video-slide {
-      width: 100vw;
-      flex-shrink: 0;
-      border-radius: 10px;
-    }
-
-    /* Content Wrapper */
-    .content-wrapper {
-      width: 90%;
-      max-width: 1200px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-  }
-  footer .social-icons a {
-      color: white;
-      margin: 0 10px;
-      font-size: 20px;
-      text-decoration: none;
-  }
-  footer .social-icons a:hover {
-      color: #144171;
-  }
-  footer p {
-      margin-top: 10px;
-      font-size: 14px;
-  }
-    @media (max-width: 600px) {
-    
-    header h1 {
-      font-size: 24px; /* Slightly smaller for mobile */
-  }
-  a{
-    font-size: 12px; 
-    font-weight: bold;
-  }
-  footer {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  footer div {
-      width: 100%; /* Full width for each section */
-  }
-
-  .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-  }
-}
-  </style>
 </head>
 
 <body>
@@ -178,19 +38,14 @@
 
   <!-- Video Section with Swipeable Video Slider -->
 <section class="video-slider-container">
-        <h2 align="center">Watch Our Story</h2>
-        <div class="video-slider">
-          <video class="video-slide" id="video1" autoplay loop muted playsinline>
-            <source src="assets/Story.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-      
-          <video class="video-slide" id="video2" autoplay loop muted playsinline>
-            <source src="assets/Story2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
+  <h2 align="center">Watch Our Story</h2>
+  <div class="video-slider">
+    <video class="video-slide" id="video1" autoplay loop muted playsinline>
+      <source src="assets/Story.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
 
 <script>
   let touchStartX = 0;
@@ -286,10 +141,10 @@
       </ul>
     </div>
     <div id="contact" class="social-icons">
-      <a href="https://www.facebook.com/profile.php?id=61573393384572"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.facebook.com/p/Jisnu-Sport-61572467410287/"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/jisnusportsofficial/"><i class="fab fa-instagram"></i></a>
       <a href="https://www.youtube.com/@JisnuSports"><i class="fab fa-youtube"></i></a>
-      <a href="https://x.com/JisnuSports"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
     <div style="width: 100%; text-align: center;">
       <p>Copyrights 2025 © Jisnu Sports. All rights reserved</p>
@@ -309,6 +164,22 @@
     setInterval(() => moveSlide(1), 4000);
   });
 </script>
+<!--<script>
+  document.addEventListener("copy", (event) => {
+      const selectData = window.getSelection().toString();
+      event.clipboardData.setData(
+        "text/plain",
+        "SachinJha1822",
+    );
+    event.preventDefault();
+  });
+</script>
+<script>
+  document.addEventListener("contextmenu", function(event){
+    alert("Inspect Elements Not Allowed");
+    event.preventDefault();
+  })
+</script>-->
 
 </body>
 </html>
