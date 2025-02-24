@@ -8,19 +8,63 @@ body {
 }
 
 header, footer {
-    background: #007BFF;
-	background: -webkit-linear-gradient(to right, #007BFF, #007BFF);
-	background: linear-gradient(to right, #007BFF, #007BFF);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
+    background: linear-gradient(145deg, #0066cc, #004d99);
     color: #fff;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.container {
+    padding: 20px;
+    text-align: center;
+}
+.donation-section {
+    margin-bottom: 30px;
+}
+.donate-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.donate-btn:hover {
+    background-color: #0a66d6;
+}
+.qr-code-section {
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+}
+.qr-code-section img {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+.download-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block; /* Keep button inside the container */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.download-btn:hover {
+    background-color: #0056b3;
 }
 
 header h1, footer p {
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -36,6 +80,8 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .container {
@@ -211,13 +257,13 @@ footer p {
 }
 .circle-image {
     margin-top: 20px;
-    margin-left: 50px;
     position: relative;
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.8);
 }
+
 /* Style for the logout button */
 .logout-button {
     position: absolute;
