@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Donate - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: url('https://source.unsplash.com/1600x900/?sports,charity') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .notify-btn {
+            background: #ffcc00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .notify-btn:hover {
+            background: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How to Donate</h1>
+        <p>We are working on bringing you a seamless donation experience. Stay tuned!</p>
+        <div class="countdown" id="countdown">00d : 00h : 00m : 00s</div>
+        <button class="notify-btn" id="notifyBtn" onclick="notifyUser()">Stay Updated</button>
+    </div>
+
+    <script>
+        function countdownTimer() {
+            const launchDate = new Date("March 30, 2025 00:00:00").getTime();
+            const x = setInterval(function () {
+                const now = new Date().getTime();
+                const distance = launchDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("countdown").innerHTML = `${days}d : ${hours}h : ${minutes}m : ${seconds}s`;
+                
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "We Are Live!";
+                }
+            }, 1000);
+        }
+        countdownTimer();
+
+        function notifyUser() {
+            const button = document.getElementById("notifyBtn");
+            button.innerText = "You are notified!";
+            button.disabled = true;
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
