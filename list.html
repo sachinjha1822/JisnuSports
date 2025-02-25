@@ -134,7 +134,10 @@
     width: 95%;
   }
 }
-
+.masked {
+      display: inline-block;
+      filter: blur(4px);  /* Adjust the blur radius as desired */
+    }
 </style>
 </head>
 <body>
@@ -155,6 +158,15 @@
         <th>Address</th>
         <th>Date</th>
       </tr>
+      <tr><td>Shushant</td><td>50</td><td>7295905612</td><td>UPI</td><td>Not Provided</td><td>2025-02-25</td></tr>
+      <tr><td>Ajay</td><td>50</td><td>8102395350</td><td>UPI</td><td>Not Provided</td><td>2025-02-22</td></tr>
+      <tr><td>Saurav</td><td>50</td><td>9608814088</td><td>UPI</td><td>Not Provided</td><td>2025-02-22</td></tr>
+      <tr><td>Monu</td><td>50</td><td>7250814683</td><td>UPI</td><td>Not Provided</td><td>2025-02-22</td></tr>
+      <tr><td>Balmukund</td><td>50</td><td>7635030162</td><td>UPI</td><td>Not Provided</td><td>2025-02-22</td></tr>
+      <tr><td>Shubham</td><td>50</td><td>9354716138</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
+      <tr><td>Sachin</td><td>50</td><td>7061423688</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
+      <tr><td>Hira</td><td>50</td><td>6299805680</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
+      <tr><td>Ricky</td><td>50</td><td>8271872623</td><td>UPI</td><td>Not Provided</td><td>2025-02-21</td></tr>
       <tr><td>Vishal</td><td>50</td><td>9608887282</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Pawan</td><td>50</td><td>9718304840</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Puchu</td><td>50</td><td>9065934621</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
@@ -163,9 +175,9 @@
       <tr><td>Krishi</td><td>50</td><td>7050989610</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Shibgtullah</td><td>50</td><td>6202796426</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Satyam</td><td>50</td><td>6204998130</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
+      <tr><td>Ajit</td><td>150</td><td>9262220378</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Anil</td><td>50</td><td>7157043238</td><td>UPI</td><td>Not Provided</td><td>2025-01-15</td></tr>
        <tr><td>Abhishek</td><td>100</td><td></td><td>UPI</td><td>9102187147</td><td>2025-01-19</td></tr>
-      <tr><td>Ajit</td><td>150</td><td>9262220378</td><td>UPI</td><td>Not Provided</td><td>2025-02-18</td></tr>
       <tr><td>Chandan</td><td>150</td><td>7352231491</td><td>UPI</td><td>Not Provided</td><td>2025-01-15</td></tr>
     </table>
     </div>
@@ -302,66 +314,79 @@ const xmlData = `
   </donations>
 `;
 
-// Function to display previous month donations
-function displayPreviousMonthDonations(xmlString) {
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xmlString, "text/xml");
-  const months = xmlDoc.getElementsByTagName("month");
+// Function to display previous month donations from the XML data
+    function displayPreviousMonthDonations(xmlString) {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+      const months = xmlDoc.getElementsByTagName("month");
 
-  let output = "";
-  for (let i = 0; i < months.length; i++) {
-    const monthName = months[i].getAttribute("name");
-    output += `<tr><th colspan="6" style="text-align:center; background-color:#007BFF; color:white;">${monthName}</th></tr>`;
+      let output = "";
+      for (let i = 0; i < months.length; i++) {
+        const monthName = months[i].getAttribute("name");
+        output += `<tr><th colspan="6" style="text-align:center; background-color:#007BFF; color:white;">${monthName}</th></tr>`;
 
-    const donors = months[i].getElementsByTagName("donor");
-    for (let j = 0; j < donors.length; j++) {
-      const donor = donors[j];
-      const name = donor.getElementsByTagName("name")[0].textContent;
-      const amount = donor.getElementsByTagName("amount")[0].textContent;
-      const contactNode = donor.getElementsByTagName("contact")[0];
-      const contact = contactNode && contactNode.textContent.trim() !== "" ? contactNode.textContent : "N/A";
-      const paymentMethod = donor.getElementsByTagName("payment_method")[0].textContent;
-      const address = donor.getElementsByTagName("address")[0].textContent;
-      const donationDate = donor.getElementsByTagName("donation_date")[0].textContent;
+        const donors = months[i].getElementsByTagName("donor");
+        for (let j = 0; j < donors.length; j++) {
+          const donor = donors[j];
+          const name = donor.getElementsByTagName("name")[0].textContent;
+          const amount = donor.getElementsByTagName("amount")[0].textContent;
+          const contactNode = donor.getElementsByTagName("contact")[0];
+          const contact = contactNode && contactNode.textContent.trim() !== "" ? contactNode.textContent : "N/A";
+          const paymentMethod = donor.getElementsByTagName("payment_method")[0].textContent;
+          const address = donor.getElementsByTagName("address")[0].textContent;
+          const donationDate = donor.getElementsByTagName("donation_date")[0].textContent;
 
-      output += `
-        <tr class="donor-row">
-          <td class="donor-name">${name}</td>
-          <td>${amount}</td>
-          <td>${contact}</td>
-          <td>${paymentMethod}</td>
-          <td>${address}</td>
-          <td>${donationDate}</td>
-        </tr>
-      `;
+          output += `
+            <tr class="donor-row">
+              <td class="donor-name">${name}</td>
+              <td>${amount}</td>
+              <td>${contact}</td>
+              <td>${paymentMethod}</td>
+              <td>${address}</td>
+              <td>${donationDate}</td>
+            </tr>
+          `;
+        }
+      }
+
+      document.getElementById("previousMonthDonations").innerHTML += output;
     }
-  }
 
-  document.getElementById("previousMonthDonations").innerHTML += output;
-}
+    // Function to search donors in previous month donations
+    function searchDonor() {
+      const input = document.getElementById("search").value.toLowerCase();
+      const rows = document.querySelectorAll("#previousMonthDonations .donor-row");
 
-// Function to search donors in previous month donations
-function searchDonor() {
-  const input = document.getElementById("search").value.toLowerCase();
-  const rows = document.querySelectorAll("#previousMonthDonations .donor-row");
-
-  rows.forEach(row => {
-    const name = row.querySelector(".donor-name").textContent.toLowerCase();
-    if (name.includes(input)) {
-      row.style.display = "";
-    } else {
-      row.style.display = "none";
+      rows.forEach(row => {
+        const name = row.querySelector(".donor-name").textContent.toLowerCase();
+        row.style.display = name.includes(input) ? "" : "none";
+      });
     }
-  });
-}
 
-// Load the previous month donations when the page loads
-document.addEventListener("DOMContentLoaded", function () {
-  displayPreviousMonthDonations(xmlData);
-});
+    // Function to mask mobile numbers, showing only the first 4 digits in clear text
+    // and applying a blur effect to the rest.
+    function maskMobileNumbers() {
+      // Select all table cells (both in the static and dynamically created tables)
+      const cells = document.querySelectorAll("td");
+      cells.forEach(cell => {
+        const text = cell.textContent.trim();
+        // Check if the cell contains a 10-digit mobile number.
+        if (/^\d{10}$/.test(text)) {
+          const visible = text.slice(0, 4);
+          const remaining = text.slice(4);
+          // Replace the cell's content with two spans: one for visible digits and one for masked.
+          cell.innerHTML = `<span class="visible">${visible}</span><span class="masked">${remaining}</span>`;
+        }
+      });
+    }
 
-</script>
-<script src="script.js"></script>
+    // Load the previous month donations and then mask the mobile numbers once the DOM is ready.
+    document.addEventListener("DOMContentLoaded", function () {
+      displayPreviousMonthDonations(xmlData);
+      maskMobileNumbers();
+    });
+  </script>
+  <script src="script.js"></script>
   
 </body>
 </html>
