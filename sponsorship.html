@@ -196,36 +196,7 @@
         </div>
       </footer>
 
-    <script>
-        function openForm(tier) {
-            document.getElementById("sponsorForm").style.display = "block";
-            document.getElementById("formTitle").innerText = "Apply for " + tier;
-            document.getElementById("userTier").innerText = tier;
-        }
-
-        function closeForm() {
-            document.getElementById("sponsorForm").style.display = "none";
-        }
-
-        function showDummyCard(event) {
-            event.preventDefault();
-            document.getElementById("sponsorForm").style.display = "none";
-            document.getElementById("dummyCard").style.display = "block";
-            document.getElementById("userName").innerText = document.getElementById("inputName").value;
-            document.getElementById("applyDate").innerText = new Date().toLocaleDateString();
-
-            // Set background based on tier
-            const tier = document.getElementById("userTier").innerText;
-            const dummyCard = document.getElementById("dummyCard");
-
-            if (tier === "Gold Sponsor") {
-                dummyCard.style.background = "linear-gradient(135deg, #FFD700, #DAA520)";
-            } else if (tier === "Silver Sponsor") {
-                dummyCard.style.background = "linear-gradient(135deg, #A7C7E7, #5B92E5)";
-            } else if (tier === "Bronze Sponsor") {
-                dummyCard.style.background = "linear-gradient(135deg, #D2A679, #8B5A2B)";
-            }
-        }
-    </script>
+<script src="script.js"></script>
+<script src="security.js"></script>
 </body>
 </html>
