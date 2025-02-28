@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="donation.css">
-    <script src="script.js"></script>
     
     
 </head>
@@ -132,46 +131,7 @@
         <p>Copyrights 2025 © Jisnu Sports. All rights reserved</p>
     </footer>
 
-    <script>
-        function showQRCode(amount) {
-            // Show the QR code section
-            document.getElementById('qr-section').style.display = 'block';
-            
-            let qrCodeMap = {
-                50: 'qr_code/50.jpeg',
-                100: 'qr_code/100.jpeg',
-                150: 'qr_code/150.jpeg',
-                200: 'qr_code/200.jpeg'
-            };
-
-            // Set the QR code image based on the selected amount
-            document.getElementById('qr-code').src = qrCodeMap[amount];
-
-            // Set the download link for the QR code image
-            const downloadLink = document.getElementById('download-link');
-            downloadLink.href = qrCodeMap[amount];
-            downloadLink.download = `donation_qrcode_${amount}.jpeg`;
-
-            alert('Scan the QR code to donate ₹' + amount);
-        }
-
-        function paymentSuccess() {
-            alert("Payment Successfully Made!");
-            // You can add more functionality for the payment confirmation here.
-        }
-    </script>
-    <script>
-  let slideIndex = 0;
-  function moveSlide(n) {
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slides img').length;
-    slideIndex = (slideIndex + n + totalSlides) % totalSlides;
-    slides.style.transform = `translateX(-${slideIndex * 100}vw)`;
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    setInterval(() => moveSlide(1), 4000);
-  });
-</script>
+<script src="script.js"></script>
+<script src="security.js"></script>
 </body>
 </html>
