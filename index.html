@@ -47,37 +47,6 @@
   </div>
 </section>
 
-<script>
-  let touchStartX = 0;
-  let touchEndX = 0;
-  let currentIndex = 0;
-  const slider = document.querySelector('.video-slider');
-
-  document.addEventListener("touchstart", (event) => {
-    touchStartX = event.touches[0].clientX;
-  });
-
-  document.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0].clientX;
-    handleSwipe();
-  });
-
-  function handleSwipe() {
-    const swipeThreshold = 50; // Minimum swipe distance
-
-    if (touchStartX - touchEndX > swipeThreshold && currentIndex === 0) {
-      // Swipe left to show the second video
-      currentIndex = 1;
-    } else if (touchEndX - touchStartX > swipeThreshold && currentIndex === 1) {
-      // Swipe right to go back to the first video
-      currentIndex = 0;
-    }
-
-    slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
-  }
-</script>
-
-
   <div class="content-wrapper">
     <!-- About Sections -->
     <section id="about">
@@ -150,21 +119,7 @@
       <p>Copyrights 2025 © Jisnu Sports. All rights reserved</p>
     </div>
   </footer>
-
-  <script>
-  let slideIndex = 0;
-  function moveSlide(n) {
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slides img').length;
-    slideIndex = (slideIndex + n + totalSlides) % totalSlides;
-    slides.style.transform = `translateX(-${slideIndex * 100}vw)`;
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    setInterval(() => moveSlide(1), 4000);
-  });
-</script>
- <script src="script.js"></script>
-
+<script src="script.js"></script>
+<script src="security.js"></script>
 </body>
 </html>
