@@ -169,28 +169,7 @@
         </div>
       </footer>
     
-        <script>
-        function openModal(mediaSrc, type) {
-            const videoModal = document.getElementById('modalVideo');
-            const imageModal = document.getElementById('modalImage');
-            
-            if (type === 'video') {
-                videoModal.src = `assets/${mediaSrc}.mp4`;
-                videoModal.style.display = 'block';
-                imageModal.style.display = 'none';
-            } else {
-                imageModal.src = mediaSrc;
-                imageModal.style.display = 'block';
-                videoModal.style.display = 'none';
-            }
-            document.getElementById('mediaModal').style.display = 'flex';
-        }
-        
-        function closeModal() {
-            document.getElementById('mediaModal').style.display = 'none';
-            document.getElementById('modalVideo').pause();
-        }
-        </script>
-        <script src="script.js"></script>
+<script src="script.js"></script>
+<script src="security.js"></script>
 </body>
 </html>
