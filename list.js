@@ -1,6 +1,160 @@
 // Sample XML data (replace with real XML data as required)
 const xmlData = `
 <donations>
+<month name="February 2025">
+  <donor>
+    <name>Wikki</name>
+    <amount>50</amount>
+    <contact></contact>
+    <payment_method>UPI</payment_method>
+    <address>Giridihi</address>
+    <donation_date>2025-02-26</donation_date>
+  </donor>
+  <donor>
+    <name>Shushant</name>
+    <amount>50</amount>
+    <contact>7295905612</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-25</donation_date>
+  </donor>
+  <donor>
+    <name>Ajay</name>
+    <amount>50</amount>
+    <contact>8102395350</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-22</donation_date>
+  </donor>
+  <donor>
+    <name>Saurav</name>
+    <amount>50</amount>
+    <contact>9608814088</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-22</donation_date>
+  </donor>
+  <donor>
+    <name>Monu</name>
+    <amount>50</amount>
+    <contact>7250814683</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-22</donation_date>
+  </donor>
+  <donor>
+    <name>Balmukund</name>
+    <amount>50</amount>
+    <contact>7635030162</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-22</donation_date>
+  </donor>
+  <donor>
+    <name>Shubham</name>
+    <amount>50</amount>
+    <contact>9354716138</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-21</donation_date>
+  </donor>
+  <donor>
+    <name>Sachin</name>
+    <amount>50</amount>
+    <contact>7061423688</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-21</donation_date>
+  </donor>
+  <donor>
+    <name>Hira</name>
+    <amount>50</amount>
+    <contact>6299805680</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-21</donation_date>
+  </donor>
+  <donor>
+    <name>Ricky</name>
+    <amount>50</amount>
+    <contact>8271872623</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-21</donation_date>
+  </donor>
+  <donor>
+    <name>Vishal</name>
+    <amount>50</amount>
+    <contact>9608887282</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-18</donation_date>
+  </donor>
+  <donor>
+    <name>Pawan</name>
+    <amount>50</amount>
+    <contact>9718304840</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-18</donation_date>
+  </donor>
+  <donor>
+    <name>Puchu</name>
+    <amount>50</amount>
+    <contact>9065934621</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-18</donation_date>
+  </donor>
+  <donor>
+    <name>Sagar</name>
+    <amount>50</amount>
+    <contact>7292838377</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-18</donation_date>
+  </donor>
+  <donor>
+    <name>Ajit</name>
+    <amount>150</amount>
+    <contact>9262220378</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-18</donation_date>
+  </donor>
+  <donor>
+    <name>Abhishek</name>
+    <amount>100</amount>
+    <contact>9102187147</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-19</donation_date>
+  </donor>
+  <donor>
+    <name>Chandan</name>
+    <amount>150</amount>
+    <contact>7352231491</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-28</donation_date>
+  </donor>
+  <donor>
+    <name>Pratyush</name>
+    <amount>50</amount>
+    <contact>9354231491</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-28</donation_date>
+  </donor>
+  <donor>
+    <name>Rahul</name>
+    <amount>50</amount>
+    <contact>7487231491</contact>
+    <payment_method>UPI</payment_method>
+    <address>Not Provided</address>
+    <donation_date>2025-02-28</donation_date>
+  </donor>
+</month>
 <month name="January 2025">
   <donor>
     <name>Unknown</name>
